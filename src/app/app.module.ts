@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PatosComponent } from './patos/patos.component';
 import { ImagenesComponent } from './imagenes/imagenes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ImagenesComponent } from './imagenes/imagenes.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
 
   ],
   providers: [],
