@@ -6,9 +6,9 @@ import { PatosComponent } from './patos/patos.component';
 import { ImagenesComponent } from './imagenes/imagenes.component';
 
 const routes: Routes = [
-  {path: '', component:HomeComponent},
-  {path: 'patos', component:PatosComponent},
-  {path: 'imagenes', component:ImagenesComponent},
+  {path: '', component:PatosComponent},
+  {path: 'imagenes', component:PatosComponent},
+  {path: 'patos', component:ImagenesComponent},
 
 ];
 @NgModule({
