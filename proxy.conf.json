@@ -2,6 +2,7 @@
   "/api/*": {
     "target": "https://random-d.uk",
     "secure": false,
-    "logLevel": "debug"
+    "logLevel": "debug",
+    "changeOrigin": true
   }
 }

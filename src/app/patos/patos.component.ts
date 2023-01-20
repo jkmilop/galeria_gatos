@@ -1,25 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from '@firebase/util';
+import { RandomApiService } from '../service/random-api.service';
 @Component({
   selector: 'app-patos',
   templateUrl: './patos.component.html',
   styleUrls: ['./patos.component.css']
 })
 export class PatosComponent implements OnInit {
+  
+  listaDePatos: Array<any> = []; 
 
-  constructor(private http: HttpClient) {this.crearImagen();}
+  constructor(private randomApiService:RandomApiService) {
+  }
 
   ngOnInit(): void {
+    this.generarListaDePatos();
   }
 
-  crearImagen(){
+  async generarListaDePatos(){
 
-    let urlBase = "/api/random";
+    let tam = 10;
 
-    this.http.get(urlBase,{headers:new HttpHeaders({ "Content-Type": "application/JSON" })}).subscribe(
-      data => {
-        console.log(data);
-      }
-    )
+    this.listaDePatos = [];
+
+    for(let i = 0 ; i < tam ; i++){
+      this.randomApiService.fetchImage().subscribe(
+        data => {
+          console.log(data)
+          let image  = Object.values(data)[1];
+          this.listaDePatos.push(image);
+        }
+      )
+    }
+
   }
+ 
 }
