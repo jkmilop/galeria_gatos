@@ -1,4 +1,14 @@
-<p>Modulo Patos</p>
+<div class="backgr-image">
+    <div class="grid-container">
+      <div *ngFor="let pato of listaDePatos">
 
+        <img src="{{pato.link}}" alt=""  style="width: 70%; height: 60%;">
 
+        <div>
+            <p (click)="likeDuck(pato)">   
+              <mat-icon > favorite_border</mat-icon>  </p>
+        </div>
 
+      </div>
+    </div>   
+</div>

@@ -27,11 +27,16 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"],
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/material-design-icons/iconfont/material-icons.css",
+              "node_modules/ngx-toastr/toastr.css"
+            ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"]          },
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          },
           "configurations": {
             "production": {
               "budgets": [
@@ -67,7 +72,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {"proxyConfig": "proxy.conf.json"},
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "frontGaleria:build:production"
@@ -99,6 +106,16 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "frontGaleria:build:production",
+            "firebaseProject": "duck-f042d",
+            "firebaseHostingSite": "duck-f042d"
           }
         }
       }

@@ -1,0 +1,22 @@
+.backgr-image{
+    background-image: url("https://images.pexels.com/photos/2172499/pexels-photo-2172499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .grid-container {
+  
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 12px;
+    padding: 12px;
+  }
+  
+  .grid-container > div {
+    text-align: center; 
+    font-size: 30px;
+  }
+
+  .mat-focused .mat-icon {
+    color: red;
+}

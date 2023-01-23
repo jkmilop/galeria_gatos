@@ -1,5 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { FireCrudService } from '../service/fire-crud.service';
+import { RandomApiService } from '../service/random-api.service';
+import { RamdonDuck } from '../shared/ramdon-duck';
+ 
 
 @Component({
   selector: 'app-imagenes',
@@ -8,24 +12,72 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagenesComponent implements OnInit {
 
-  dataImagen: any;
+ 
+  listaDePatos: Array<any> = []; 
+  listaLikes: Array<any> = []; 
 
-  constructor(private http: HttpClient) {this.crearImagen();}
+  isEnable?: Boolean = false; 
 
-  ngOnInit(): void {
+  constructor(
+    private fireCrud : FireCrudService,
+    private randomApiService:RandomApiService,
+    private toastr: ToastrService) {    
+    
+    this.generarListaDePatos();
+ 
+
   }
 
-  async crearImagen(){
+  ngOnInit(): void {
+      this.getData();
+  }
 
-    // Id name en proxy.conf.json
-    let urlBase = "/api/v2/random";
+  async generarListaDePatos(){
 
-    await this.http.get(urlBase,{headers:new HttpHeaders({ "Content-Type": "application/JSON" })}).subscribe(
-      data => { 
-        this.dataImagen = Object.values(data)[1];
+    let tam = 10;
 
+    this.listaDePatos = [];
+
+    for(let i = 0 ; i < tam ; i++){
+      this.randomApiService.fetchImage().subscribe(
+        (        data: { [s: string]: unknown; } | ArrayLike<unknown>) => {
+          //console.log(data)
+          let image  = Object.values(data)[1] as string;
+
+          let duck:RamdonDuck = {
+            link: image,
+            isFavorite: true,
+          };
+          
+          this.listaDePatos.push(duck);
+        }
+      )
+    }
+
+  }
+
+  likeDuck(patoUrl : any ): void {
+ 
+      let duck:RamdonDuck = {
+        link: patoUrl.link,
+        isFavorite: true,
+      };
+    
+      this.fireCrud.AddDuck(duck);   
+      this. notaRecordatoria();
+  }
+
+  getData(){
+    this.fireCrud.GetDucks().valueChanges().subscribe(
+      (      data: any[]) => {
+        this.listaLikes = data;
       }
     )
+  }
+
+  notaRecordatoria(){
+      this.toastr.success("Cada vez que recarga la pagina muestra 10 imagenes aleatorias.","Success",
+      )
   }
 
 }

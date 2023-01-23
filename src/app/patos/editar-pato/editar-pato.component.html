@@ -1,0 +1,30 @@
+ 
+<div class="">
+    <div class="login">
+      <h2 class="text-center">Editar pato</h2>
+      <form [formGroup]="formularioRegistro"> <!-- [formGroup]="programaForm" (ngSubmit)="guardar()" -->
+        
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" formControlName="nombre" matInput class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label>Color</label>
+          <input type="text" formControlName="color" matInput class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label>Edad</label>
+          <input type="text" formControlName="edad" matInput class="form-control">
+        </div>
+        
+        <a mat-button (click)="editarPato()" class="btn btn-primary btn-success w-100" >Guardar</a>
+            
+        <img class="control-imagen" src="{{datosDelPato.link}}" alt="">
+      </form>
+    </div>
+  
+  </div>
+  
+ 

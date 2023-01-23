@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "duck-f042d"
+  },
+  "targets": {
+    "duck-f042d": {
+      "hosting": {
+        "frontGaleria": [
+          "duck-f042d"
+        ]
+      }
+    }
+  }
+}

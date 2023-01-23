@@ -1,0 +1,53 @@
+* {
+    margin: auto;
+    padding: auto;
+    box-sizing: border-box;
+  }
+  
+  .formularioRegistro {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+  }
+  
+  .login {
+    width: 500px;
+    height: min-content;
+    padding: 20px;
+    border-radius: 12px;
+    background: #add8e6 ;
+  }
+  .consola {
+  height: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  }
+  
+  .login h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+  
+  .login form {
+    font-size: 20px;
+  }
+  
+  .login form .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .login form input[type="submit"] {
+    font-size: 20px;
+    margin-top: 15px;
+  
+  }
+
+  .control-imagen{
+    margin-left: 140px;
+    margin-top: 12px;
+    width: 200px; 
+  }

@@ -1,0 +1,45 @@
+ 
+
+<div class="">
+    <div class="login">
+      <h2 class="text-center">Guardar pato</h2>
+      <form [formGroup]="formularioRegistro"> 
+        
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" formControlName="nombre" matInput class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label>Color</label>
+          <input type="text" formControlName="color" matInput class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label>Edad</label>
+          <input type="text" formControlName="edad" matInput class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Link</label>
+          <input type="text" formControlName="link" matInput class="form-control">
+        </div>
+
+
+    <!--     <div class="form-group">
+          <mat-radio-group formControlName="link">
+            <mat-radio-button value="1" checked>Option 1</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+          </mat-radio-group>
+        </div>
+ -->
+  
+        
+        <a mat-button (click)="addDuck()" class="btn btn-primary btn-success w-100" >Guardar</a>
+            
+       </form>
+    </div>
+  
+  </div>
+  
+ 

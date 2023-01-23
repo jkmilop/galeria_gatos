@@ -1,18 +1,21 @@
-.backgr-image{
-  background-image: url("https://images.pexels.com/photos/2172499/pexels-photo-2172499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-size: cover;
-  height: 100vh;
+ 
+  
+
+.box-pato{
+    display: inline-block;
+    width: 320px;
+    height: 200px;
+    align-items: center;
+    margin-left: 20px;
 }
 
-.grid-container {
-
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-gap: 12px;
-  padding: 12px;
+.submit-pato{
+    width: 300px;
+    margin: auto;
+    padding-top: 10px;
 }
 
-.grid-container > div {
-  text-align: center; 
-  font-size: 30px;
+.edit-pato{
+    justify-self: center;
+ 
 }
