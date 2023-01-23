@@ -12,7 +12,7 @@ Una galería de imagenes conectada a la api https://random-d.uk/api.
 
 git clone https://github.com/jkmilop/galeria_gatos
 
-cd galeria_gatos-main
+cd galeria_gatos
 
 npm i
 
