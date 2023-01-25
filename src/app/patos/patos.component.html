@@ -1,23 +1,22 @@
 <div style="margin: 20px;">
-    <button (click)="agregar()"> Agregar pato local </button>
+  <button (click)="agregar()"> Agregar pato local </button>
 </div>
 
 
 
 <div class="backgr-image">
- 
-      <div class="box-pato" *ngFor="let pato of listaLikes">
 
-      <!--   <p>{{pato.link}}</p> -->
-        <img src="{{pato.link}}" alt=""  style="width: 65%; height: 60%;">
-        
-        <div class="submit-pato">
-            <button mat-button class="edit-pato" style="margin-right: 9px; margin-left: 9px; color: blue;"  mat-raised-button color="primary" (click)="editar(pato)"> Editar </button>
-            <button mat-button (click)="eliminar(pato)" style="color: red;" color="warn"> Eliminar </button>
-        </div>  
+  <div class="box-pato" *ngFor="let pato of listaLikes">
 
-     </div>
+    <!--   <p>{{pato.link}}</p> -->
+    <img src="{{pato.link}}" alt="" style="width: 65%; height: 60%;">
+
+    <div class="submit-pato">
+      <button mat-button class="edit-pato" style="margin-right: 9px; margin-left: 9px; color: blue;" mat-raised-button
+        color="primary" (click)="editar(pato)"> Editar </button>
+      <button mat-button (click)="eliminar(pato)" style="color: red;" color="warn"> Eliminar </button>
+    </div>
+
+  </div>
 
 </div>
-    
-  

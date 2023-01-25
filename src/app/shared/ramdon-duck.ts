@@ -4,5 +4,4 @@ export interface RamdonDuck {
     edad?: Number;
     nombre?: string;
     color?: string;
-    isFavorite?: boolean;
 }
