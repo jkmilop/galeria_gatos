@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FireCrudService } from '../../service/fire-crud.service';
 import { FavoriteDuck } from '../../shared/favorite-duck';
+import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
   selector: 'app-hub-imagenes',
@@ -9,8 +10,9 @@ import { FavoriteDuck } from '../../shared/favorite-duck';
 })
 export class HubImagenesComponent implements OnInit {
   listaLikes: Array<FavoriteDuck> = [];
+  checked: any = -1;
+  event?: MatRadioChange;
   duck?: FavoriteDuck[];
-
   constructor(
     private fireCrud: FireCrudService) {}
 
@@ -35,4 +37,8 @@ export class HubImagenesComponent implements OnInit {
         });
       });
   }
+
+ radioChange(e:any,index:any){
+   this.checked=index;
+ }
 }

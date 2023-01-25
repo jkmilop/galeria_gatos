@@ -1,5 +1,7 @@
 <div class="backgr-image">
-  <div class="box-favoritos" *ngFor="let pato of listaLikes">
-    <img src="{{pato.link}}" alt="" style="width: 65%; height: 60%;">
-  </div>
+  <div class="box-favoritos">
+    <mat-radio-group aria-label="Select an option" *ngFor="let pato of listaLikes;let e = index">
+    <!--img src="{{pato.link}}" alt="" style="width: 65%; height: 60%;"-->
+      <mat-radio-button value="pato" (change)="radioChange($event,e)" (checked)="checked!=-1 && e==checked">{{pato.link}}</mat-radio-button>
+    </mat-radio-group>  </div>
 </div>
